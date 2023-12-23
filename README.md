@@ -1,5 +1,6 @@
 Cloud-Based Deployment of Netflix Clone using Jenkins - DevSecOps Initiative!
 =============================================================================
+![Alt text](1702562592240.jpeg)
 ![Alt text](<Screenshot from 2023-12-23 18-42-52.png>)
 ![Alt text](<Screenshot from 2023-12-23 18-47-23.png>)
 ### Phase 1: Initial Setup and Rollout

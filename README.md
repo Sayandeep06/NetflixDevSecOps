@@ -1,6 +1,7 @@
 Cloud-Based Deployment of Netflix Clone using Jenkins - DevSecOps Initiative!
 =============================================================================
-
+![Alt text](<Screenshot from 2023-12-23 18-42-52.png>)
+![Alt text](<Screenshot from 2023-12-23 18-47-23.png>)
 ### Phase 1: Initial Setup and Rollout
 
 Step 1: Launch EC2 Instance (Ubuntu 22.04):
@@ -36,12 +37,13 @@ Step 3: Docker Installation and App Deployment:
 
     `docker build -t netflix .
     docker run -d --name netflix -p 8081:80 netflix:latest
-
+![Alt text](<Screenshot from 2023-12-23 18-23-44.png>)
     #to delete
     docker stop <containerid>
     docker rmi -f netflix`
 
 An error will appear as an API key is required.
+![Alt text](<Screenshot from 2023-12-23 18-49-35.png>)
 
 Step 4: Obtain the API Key:
 
@@ -56,6 +58,8 @@ Now rebuild the Docker image with your API key:
 bashCopy code
 
 `docker build --build-arg TMDB_V3_API_KEY=<your-api-key> -t netflix .`
+![Alt text](<Screenshot from 2023-12-23 18-40-46.png>)
+![Alt text](<Screenshot from 2023-12-23 18-42-52-1.png>)
 
 ### Phase 2: Security
 
@@ -86,6 +90,7 @@ bashCopy code
         bashCopy code
 
         `trivy image <imageid>`
+        ![Alt text](<Screenshot from 2023-12-23 19-05-07.png>)
 
 2.  SonarQube Integration and Configuration:
 
@@ -149,7 +154,7 @@ bashCopy code
 `sudo su
 sudo usermod -aG docker jenkins
 sudo systemctl restart jenkins`
-
+![Alt text](<Screenshot from 2023-12-23 21-20-41.png>)
 ### Phase 4: Monitoring
 
 1.  Prometheus and Grafana Installation:
@@ -172,7 +177,10 @@ sudo systemctl restart jenkins`
 
     Configure Prometheus Plugin Integration:
 
-    Modify `prometheus.yml` to include scraping metrics from Node Exporter and Jenkins.
+    Modify `prometheus.yml` to include scraping metrics from Node Exporter and Jenkins.![Alt text](<Screenshot from 2023-12-23 22-30-27.png>)
+    ![Alt text](<Screenshot from 2023-12-23 22-30-36.png>)
+    ![Alt text](<Screenshot from 2023-12-23 22-38-50.png>)
+    ![Alt text](<Screenshot from 2023-12-23 22-41-32.png>)
 
 ### Phase 5: Notification
 
